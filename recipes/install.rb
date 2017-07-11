@@ -8,7 +8,7 @@ when "debian"
    apt-get update -y 
 #   apt-get -f upgrade -y 
    apt-get install build-essential -y 
-   apt-get install libssl-dev -y 
+   apt-get install libssl-dev libkrb5-dev -y
  EOF
   end
 
@@ -49,6 +49,9 @@ when "rhel"
     action :install
   end
   package "python-lxml" do 
+    action :install
+  end
+  package "libkrb5-devel" do
     action :install
   end
 end
